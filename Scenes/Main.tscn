@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbe1jjydkwcnr"]
+
+[ext_resource type="PackedScene" uid="uid://boivmjacg4rp" path="res://Scenes/Player.tscn" id="1_anm8u"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rcp0f"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 280.0
+offset_top = 30.0
+offset_right = 320.0
+offset_bottom = 53.0
+grow_horizontal = 0
+text = "Score: 
+Level:"
+
+[node name="Player" parent="." instance=ExtResource("1_anm8u")]
+position = Vector2(320, 800)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(320, 480)
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="Left" type="CollisionShape2D" parent="Boundary"]
+scale = Vector2(1, 96)
+shape = SubResource("SegmentShape2D_rcp0f")
+
+[node name="Right" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(640, 0)
+scale = Vector2(1, 96)
+shape = SubResource("SegmentShape2D_rcp0f")

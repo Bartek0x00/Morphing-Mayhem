@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj0s4c4j64g84"]
+
+[ext_resource type="Script" path="res://Scripts/Player_bullet.gd" id="1_0m6td"]
+[ext_resource type="Texture2D" uid="uid://ln2g7n3i187q" path="res://icon.svg" id="1_orfjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u3qb"]
+
+[node name="Player_bullet" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_0m6td")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_orfjg")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_3u3qb")
+
+[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(3, 3)

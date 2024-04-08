@@ -1,0 +1,7 @@
+res://Scripts/Player.gd
+res://Scripts/Settings.gd
+res://Scenes/Player.tscn
+res://Scenes/Main.tscn
+res://Scenes/Player_bullet.tscn
+res://Scripts/Player_bullet.gd
+res://Scripts/F12Handler.gd

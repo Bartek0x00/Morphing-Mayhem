@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://boivmjacg4rp"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_o2kcf"]
+[ext_resource type="Texture2D" uid="uid://dis2un6mxn2pi" path="res://Player/GRACZ-KLATKA-1.png" id="2_ghhse"]
+[ext_resource type="Texture2D" uid="uid://b3aec0ak567u3" path="res://Player/GRACZ-KLATKA-2.png" id="3_vubrf"]
+[ext_resource type="Texture2D" uid="uid://1yib0qlap7b6" path="res://Player/GRACZ-KLATKA-3.png" id="4_4y6nd"]
+[ext_resource type="Texture2D" uid="uid://j86wsdj7c4ka" path="res://Player/GRACZ-2-KLATKA-1.png" id="5_nlf8e"]
+[ext_resource type="Texture2D" uid="uid://cbsuvamtl0ihc" path="res://Player/GRACZ-2-KLATKA-2.png" id="6_1esab"]
+[ext_resource type="Texture2D" uid="uid://brahpaja4pv16" path="res://Player/GRACZ-2-KLATKA-3.png" id="7_56e3x"]
+[ext_resource type="Texture2D" uid="uid://c7cer261ppfqo" path="res://Player/GRACZ-3-KLATKA-1.png" id="8_hcclg"]
+[ext_resource type="Texture2D" uid="uid://dpmceik6f65to" path="res://Player/GRACZ-3-KLATKA-2.png" id="9_8csax"]
+[ext_resource type="Texture2D" uid="uid://ddq8elsuryr8p" path="res://Player/GRACZ-3-KLATKA-3.png" id="10_dqgq6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wb1vo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ghhse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vubrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4y6nd")
+}],
+"loop": true,
+"name": &"First",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nlf8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1esab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_56e3x")
+}],
+"loop": true,
+"name": &"Second",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hcclg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8csax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dqgq6")
+}],
+"loop": true,
+"name": &"Third",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddlar"]
+size = Vector2(31.1667, 29.8333)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_o2kcf")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_wb1vo")
+animation = &"Third"
+autoplay = "First"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0.500004, 8.5)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_ddlar")
