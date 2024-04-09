@@ -76,3 +76,6 @@ autoplay = "First"
 position = Vector2(0.500004, 8.5)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ddlar")
+
+[node name="Marker" type="Marker2D" parent="."]
+position = Vector2(0, -96)

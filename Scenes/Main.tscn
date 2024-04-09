@@ -1,25 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbe1jjydkwcnr"]
+[gd_scene load_steps=16 format=3 uid="uid://dbe1jjydkwcnr"]
 
 [ext_resource type="PackedScene" uid="uid://boivmjacg4rp" path="res://Scenes/Player.tscn" id="1_anm8u"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rcp0f"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b6fov"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p4piy"]
+width = 96
+height = 48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hs3e"]
+size = Vector2(96, 48)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ra54m"]
+width = 96
+height = 48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j46g1"]
+size = Vector2(96, 48)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_87d1j"]
+width = 96
+height = 48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8prum"]
+size = Vector2(96, 48)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_521ti"]
+width = 314
+height = 96
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_773sf"]
+size = Vector2(314, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v4re1"]
+width = 96
+height = 48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx5gr"]
+size = Vector2(96, 48)
+
 [node name="Main" type="Node2D"]
 
-[node name="Score" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 280.0
-offset_top = 30.0
-offset_right = 320.0
-offset_bottom = 53.0
-grow_horizontal = 0
-text = "Score: 
-Level:"
-
 [node name="Player" parent="." instance=ExtResource("1_anm8u")]
-position = Vector2(320, 800)
+position = Vector2(320, 734)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(320, 480)
@@ -35,3 +64,56 @@ shape = SubResource("SegmentShape2D_rcp0f")
 position = Vector2(640, 0)
 scale = Vector2(1, 96)
 shape = SubResource("SegmentShape2D_rcp0f")
+
+[node name="Up" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(320, 0)
+rotation = 3.14159
+scale = Vector2(4, 1)
+shape = SubResource("WorldBoundaryShape2D_b6fov")
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(0, 912)
+texture_normal = SubResource("NoiseTexture2D_p4piy")
+shape = SubResource("RectangleShape2D_6hs3e")
+action = "left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(200, 912)
+texture_normal = SubResource("NoiseTexture2D_ra54m")
+shape = SubResource("RectangleShape2D_j46g1")
+action = "right"
+visibility_mode = 1
+
+[node name="Down" type="TouchScreenButton" parent="."]
+position = Vector2(100, 912)
+texture_normal = SubResource("NoiseTexture2D_87d1j")
+shape = SubResource("RectangleShape2D_8prum")
+action = "down"
+
+[node name="Shoot" type="TouchScreenButton" parent="."]
+position = Vector2(301, 864)
+scale = Vector2(1.07962, 1)
+texture_normal = SubResource("NoiseTexture2D_521ti")
+shape = SubResource("RectangleShape2D_773sf")
+action = "shoot"
+visibility_mode = 1
+
+[node name="Limit" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="Upper" type="CollisionShape2D" parent="Limit"]
+position = Vector2(320, 480)
+scale = Vector2(32, 1)
+shape = SubResource("RectangleShape2D_bcbsv")
+
+[node name="Bottom" type="CollisionShape2D" parent="Limit"]
+position = Vector2(320, 848)
+scale = Vector2(32, 1)
+shape = SubResource("RectangleShape2D_5107i")
+
+[node name="Up" type="TouchScreenButton" parent="."]
+position = Vector2(100, 860)
+texture_normal = SubResource("NoiseTexture2D_v4re1")
+shape = SubResource("RectangleShape2D_wx5gr")
+action = "up"

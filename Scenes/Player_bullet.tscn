@@ -1,22 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj0s4c4j64g84"]
+[gd_scene load_steps=7 format=3 uid="uid://bj0s4c4j64g84"]
 
 [ext_resource type="Script" path="res://Scripts/Player_bullet.gd" id="1_0m6td"]
-[ext_resource type="Texture2D" uid="uid://ln2g7n3i187q" path="res://icon.svg" id="1_orfjg"]
+[ext_resource type="Texture2D" uid="uid://drok40vbv0lay" path="res://Player/POCISK.png" id="2_vpeig"]
+[ext_resource type="Texture2D" uid="uid://dfn47hhg7hvu0" path="res://Player/POCISK-2.png" id="3_joa0p"]
+[ext_resource type="Texture2D" uid="uid://uig4q3g1vq3k" path="res://Player/POCISK-3.png" id="4_geqsk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u3qb"]
 
-[node name="Player_bullet" type="RigidBody2D"]
-gravity_scale = 0.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnk7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vpeig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_joa0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_geqsk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player_bullet" type="Area2D"]
 script = ExtResource("1_0m6td")
 metadata/_edit_group_ = true
-
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_orfjg")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_3u3qb")
 
-[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(3, 3)
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lnk7u")

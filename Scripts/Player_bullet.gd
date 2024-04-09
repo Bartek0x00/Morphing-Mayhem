@@ -1,11 +1,13 @@
-extends RigidBody2D
+extends Area2D
+
+@export var speed: int = 600
 
 func _ready():
-	$Notifier.screen_exited.connect(_on_screen_exited)
+	$Sprite.frame = Score.level - 1
 	body_entered.connect(_on_body_entered)
 
-func _on_screen_exited() -> void:
-	queue_free()
+func _physics_process(delta):
+	position.y -= delta * speed
 
 func _on_body_entered() -> void:
 	queue_free()
