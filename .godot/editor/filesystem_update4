@@ -4,3 +4,4 @@ res://Scripts/Bomb.gd
 res://Scripts/Player_bullet.gd
 res://Scenes/Player_bullet.tscn
 res://Scenes/Player.tscn
+res://Scripts/Player.gd
