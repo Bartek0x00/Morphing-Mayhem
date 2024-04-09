@@ -25,6 +25,7 @@ animations = [{
 }]
 
 [node name="Player_bullet" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_0m6td")
 metadata/_edit_group_ = true
 

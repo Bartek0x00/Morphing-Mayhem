@@ -8,5 +8,5 @@ func _ready():
 func _physics_process(delta):
 	position.y += speed * delta
 
-func _on_body_entered() -> void:
+func _on_body_entered(body: Node2D) -> void:
 	queue_free()

@@ -34,16 +34,16 @@ height = 96
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_773sf"]
 size = Vector2(314, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
-
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v4re1"]
 width = 96
 height = 48
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx5gr"]
 size = Vector2(96, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
 
 [node name="Main" type="Node2D"]
 
@@ -54,7 +54,7 @@ position = Vector2(320, 734)
 position = Vector2(320, 480)
 
 [node name="Boundary" type="StaticBody2D" parent="."]
-collision_mask = 2
+collision_mask = 6
 
 [node name="Left" type="CollisionShape2D" parent="Boundary"]
 scale = Vector2(1, 96)
@@ -90,6 +90,7 @@ position = Vector2(100, 912)
 texture_normal = SubResource("NoiseTexture2D_87d1j")
 shape = SubResource("RectangleShape2D_8prum")
 action = "down"
+visibility_mode = 1
 
 [node name="Shoot" type="TouchScreenButton" parent="."]
 position = Vector2(301, 864)
@@ -99,7 +100,15 @@ shape = SubResource("RectangleShape2D_773sf")
 action = "shoot"
 visibility_mode = 1
 
+[node name="Up" type="TouchScreenButton" parent="."]
+position = Vector2(100, 860)
+texture_normal = SubResource("NoiseTexture2D_v4re1")
+shape = SubResource("RectangleShape2D_wx5gr")
+action = "up"
+visibility_mode = 1
+
 [node name="Limit" type="StaticBody2D" parent="."]
+collision_layer = 32
 collision_mask = 2
 
 [node name="Upper" type="CollisionShape2D" parent="Limit"]
@@ -111,9 +120,3 @@ shape = SubResource("RectangleShape2D_bcbsv")
 position = Vector2(320, 848)
 scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_5107i")
-
-[node name="Up" type="TouchScreenButton" parent="."]
-position = Vector2(100, 860)
-texture_normal = SubResource("NoiseTexture2D_v4re1")
-shape = SubResource("RectangleShape2D_wx5gr")
-action = "up"

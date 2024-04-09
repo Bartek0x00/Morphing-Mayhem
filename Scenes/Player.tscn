@@ -61,6 +61,7 @@ size = Vector2(31.1667, 29.8333)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 33
 motion_mode = 1
 script = ExtResource("1_o2kcf")
 metadata/_edit_group_ = true

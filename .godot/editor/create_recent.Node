@@ -1,3 +1,8 @@
+Button
+CenterContainer
+ColorRect
+Control
+Container
 CollisionShape2D
 AnimatedSprite2D
 Area2D
@@ -7,7 +12,3 @@ AnimationTree
 Marker2D
 Label
 Camera2D
-RigidBody2D
-VisibleOnScreenNotifier2D
-Sprite2D
-CharacterBody2D
