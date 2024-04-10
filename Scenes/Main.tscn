@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbe1jjydkwcnr"]
+[gd_scene load_steps=18 format=3 uid="uid://dbe1jjydkwcnr"]
 
 [ext_resource type="PackedScene" uid="uid://boivmjacg4rp" path="res://Scenes/Player.tscn" id="1_anm8u"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_tanya"]
+[ext_resource type="PackedScene" uid="uid://3taynxbx2ow4" path="res://Scenes/Enemy1.tscn" id="3_hy2mw"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rcp0f"]
 
@@ -46,6 +48,7 @@ size = Vector2(96, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_tanya")
 
 [node name="Player" parent="." instance=ExtResource("1_anm8u")]
 position = Vector2(320, 734)
@@ -122,16 +125,59 @@ scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_5107i")
 
 [node name="Pause_menu" type="ColorRect" parent="."]
+visible = false
 offset_right = 640.0
 offset_bottom = 960.0
 color = Color(0, 0, 0, 0.466667)
 
 [node name="Resume" type="Button" parent="Pause_menu"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -66.0
+offset_right = 97.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Resume"
 
 [node name="Exit" type="Button" parent="Pause_menu"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 51.0
+offset_right = 48.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+
+[node name="Pause" type="Button" parent="."]
+offset_right = 89.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 64
+text = "="
+
+[node name="Enemy1" parent="." instance=ExtResource("3_hy2mw")]
+position = Vector2(156, 306)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_hy2mw")]
+position = Vector2(456, 321)
+scale = Vector2(-1, 1)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_hy2mw")]
+position = Vector2(323, 150)
+
+[connection signal="pressed" from="Pause_menu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

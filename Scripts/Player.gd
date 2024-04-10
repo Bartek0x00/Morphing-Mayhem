@@ -14,14 +14,6 @@ func shoot():
 		get_parent().add_child(bullet)
 		lastTime = currentTime
 
-func toggle_pause():
-	if get_tree().paused == true:
-		get_tree().paused = false
-		$Pause_menu.hide()
-	else:
-		get_tree().paused = true
-		$Pause_menu.show()
-
 func _physics_process(_delta):
 	if Input.is_action_pressed("shoot"):
 		shoot()

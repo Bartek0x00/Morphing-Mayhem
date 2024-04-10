@@ -1,7 +1,4 @@
 res://Scenes/Main.tscn
-res://Scripts/Enemy.gd
-res://Scripts/Bomb.gd
-res://Scripts/Player_bullet.gd
-res://Scenes/Player_bullet.tscn
-res://Scenes/Player.tscn
-res://Scripts/Player.gd
+res://Scenes/Enemy2.tscn
+res://Scenes/Enemy3.tscn
+res://Scenes/Enemy1.tscn

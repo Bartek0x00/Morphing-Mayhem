@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvklih5aplnqy"]
+[gd_scene load_steps=8 format=3 uid="uid://dvklih5aplnqy"]
 
 [ext_resource type="Texture2D" uid="uid://ba4htp5d2nqba" path="res://Enemy/Enemy3/Enemy3-1.png" id="1_lptw1"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_xo6ak"]
 [ext_resource type="Texture2D" uid="uid://ciluy062wigk3" path="res://Enemy/Enemy3/Enemy3-2.png" id="2_ojxnr"]
 [ext_resource type="Texture2D" uid="uid://lnfdbmmwauvg" path="res://Enemy/Enemy3/Enemy3-3.png" id="3_3g3gv"]
+
+[sub_resource type="Curve2D" id="Curve2D_ruckm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, -158, 0, 0, 0, 0, 72, -220, 0, 0, 0, 0, -75, -222, 0, 0, 0, 0, -119, -153, 0, 0, 0, 0, 0, 0)
+}
+point_count = 6
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_424di"]
 animations = [{
@@ -24,14 +31,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjsks"]
 size = Vector2(96, 93)
 
-[node name="Enemy3" type="Area2D"]
+[node name="Enemy3" type="Node2D"]
 metadata/_edit_group_ = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-1, 129)
+curve = SubResource("Curve2D_ruckm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotates = false
+
+[node name="Enemy3" type="Area2D" parent="Path2D/PathFollow2D"]
+script = ExtResource("1_xo6ak")
+stage = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy3"]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_424di")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy3"]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_xjsks")

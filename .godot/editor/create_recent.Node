@@ -1,3 +1,6 @@
+PathFollow2D
+Path2D
+Node2D
 Button
 CenterContainer
 ColorRect
@@ -9,6 +12,3 @@ Area2D
 TouchScreenButton
 StaticBody2D
 AnimationTree
-Marker2D
-Label
-Camera2D

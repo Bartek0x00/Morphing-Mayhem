@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmpaneaw1sbby"]
+[gd_scene load_steps=8 format=3 uid="uid://dmpaneaw1sbby"]
 
 [ext_resource type="Texture2D" uid="uid://mtie427xcktd" path="res://Enemy/Enemy2/Enemy2-1.png" id="1_j1v8u"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_l81uj"]
 [ext_resource type="Texture2D" uid="uid://krgnttuvqq8o" path="res://Enemy/Enemy2/Enemy2-2.png" id="2_0l67d"]
 [ext_resource type="Texture2D" uid="uid://3xen11ll7lwc" path="res://Enemy/Enemy2/Enemy2-3.png" id="3_474wp"]
+
+[sub_resource type="Curve2D" id="Curve2D_qmlyy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 108, 0, 0, 0, 0, 0, 109, -112, 0, 0, 0, 0, 0, -112, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rqt3u"]
 animations = [{
@@ -24,14 +31,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxurp"]
 size = Vector2(63, 56)
 
-[node name="Enemy2" type="Area2D"]
+[node name="Enemy2" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-53, 55)
+curve = SubResource("Curve2D_qmlyy")
 metadata/_edit_group_ = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotates = false
+
+[node name="Enemy2" type="Area2D" parent="Path2D/PathFollow2D"]
+script = ExtResource("1_l81uj")
+stage = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy2"]
 position = Vector2(-0.5, 0)
 sprite_frames = SubResource("SpriteFrames_rqt3u")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy2"]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_mxurp")
