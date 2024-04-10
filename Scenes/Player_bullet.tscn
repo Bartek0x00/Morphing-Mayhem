@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uig4q3g1vq3k" path="res://Player/POCISK-3.png" id="4_geqsk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u3qb"]
+size = Vector2(13, 15.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lnk7u"]
 animations = [{
@@ -30,9 +31,9 @@ script = ExtResource("1_0m6td")
 metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
+position = Vector2(0, -0.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_3u3qb")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lnk7u")

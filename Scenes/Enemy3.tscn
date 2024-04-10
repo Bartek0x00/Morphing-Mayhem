@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvklih5aplnqy"]
+[gd_scene load_steps=10 format=3 uid="uid://dvklih5aplnqy"]
 
 [ext_resource type="Texture2D" uid="uid://ba4htp5d2nqba" path="res://Enemy/Enemy3/Enemy3-1.png" id="1_lptw1"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_xo6ak"]
@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ruckm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, -158, 0, 0, 0, 0, 72, -220, 0, 0, 0, 0, -75, -222, 0, 0, 0, 0, -119, -153, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -118, 0, 0, 0, 0, 25, -158, 0, 0, 0, 0, -24, -158, 0, 0, 0, 0, -62, -122, 0, 0, 0, 0, 0, 0)
 }
 point_count = 6
 
@@ -31,11 +31,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjsks"]
 size = Vector2(96, 93)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c4lr"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7khma"]
+bg_color = Color(0.270588, 0.670588, 0.270588, 1)
+
 [node name="Enemy3" type="Node2D"]
 metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-1, 129)
+position = Vector2(0, 87)
 curve = SubResource("Curve2D_ruckm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -43,7 +49,11 @@ rotates = false
 
 [node name="Enemy3" type="Area2D" parent="Path2D/PathFollow2D"]
 script = ExtResource("1_xo6ak")
+speed = 100
 stage = 3
+cooldown = 3
+max_health = 5
+score = 5
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy3"]
@@ -51,6 +61,19 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_424di")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy3"]
+[node name="Shape" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy3"]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_xjsks")
+
+[node name="Marker" type="Marker2D" parent="Path2D/PathFollow2D/Enemy3"]
+position = Vector2(0, 64)
+
+[node name="Health_bar" type="ProgressBar" parent="Path2D/PathFollow2D/Enemy3"]
+offset_left = -44.0
+offset_top = -61.0
+offset_right = 45.0
+offset_bottom = -51.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8c4lr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7khma")
+step = 1.0
+show_percentage = false

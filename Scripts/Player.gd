@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed: int = 150
 @export var level: int = 1
 @export var cooldown: float = 0.25
+@export var max_health: int = 3
+var health: int = max_health
 const MAX_LEVEL: int = 3
 var lastTime: float = 0
 

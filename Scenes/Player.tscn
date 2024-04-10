@@ -57,24 +57,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddlar"]
-size = Vector2(31.1667, 29.8333)
+size = Vector2(23.6667, 24.1667)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 33
 motion_mode = 1
 script = ExtResource("1_o2kcf")
+cooldown = 1.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wb1vo")
-animation = &"Third"
+animation = &"First"
 autoplay = "First"
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0.500004, 8.5)
+position = Vector2(-0.999999, 0.499999)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ddlar")
 
