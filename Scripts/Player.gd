@@ -8,7 +8,14 @@ var health: int = max_health
 const MAX_LEVEL: int = 3
 var lastTime: float = 0
 
-func shoot():
+func damage() -> int:
+	if (health - 1) > 0:
+		health -= 1
+		return 0
+	get_tree().change_scene_to_file("res://Scenes/Final.tscn")
+	return 1
+
+func shoot() -> void:
 	var currentTime = Time.get_ticks_msec() / 1000.0
 	if currentTime - lastTime >= cooldown:
 		var bullet = preload("res://Scenes/Player_bullet.tscn").instantiate()

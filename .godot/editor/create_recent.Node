@@ -1,3 +1,6 @@
+Button
+ColorRect
+RichTextLabel
 Label
 ProgressBar
 Marker2D
@@ -7,9 +10,5 @@ Area2D
 PathFollow2D
 Path2D
 Node2D
-Button
 CenterContainer
-ColorRect
 Control
-Container
-AnimatedSprite2D

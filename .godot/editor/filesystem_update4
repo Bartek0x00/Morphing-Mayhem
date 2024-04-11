@@ -1,13 +1,3 @@
 res://Scenes/Main.tscn
-res://Scripts/Main.gd
-res://Scenes/Player_bullet.tscn
-res://Scenes/Player.tscn
-res://Scripts/Bomb.gd
-res://Scripts/Enemy.gd
-res://Scenes/Bomb.tscn
-res://Scenes/Enemy1.tscn
-res://Scenes/Enemy2.tscn
-res://Scenes/Enemy3.tscn
 res://Scripts/Player.gd
-res://Scripts/Player_bullet.gd
-res://Scripts/Score.gd
+res://Scenes/Player.tscn
