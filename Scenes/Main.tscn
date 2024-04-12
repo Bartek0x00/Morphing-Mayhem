@@ -9,9 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50udm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p4piy"]
 width = 96
@@ -80,6 +80,11 @@ position = Vector2(320, 960)
 scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_5107i")
 
+[node name="Mobile" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(320, 846)
+scale = Vector2(32, 1)
+shape = SubResource("RectangleShape2D_50udm")
+
 [node name="Limit" type="StaticBody2D" parent="."]
 collision_layer = 32
 collision_mask = 2
@@ -97,7 +102,7 @@ shape = SubResource("RectangleShape2D_50udm")
 [node name="Pause_menu" type="ColorRect" parent="."]
 process_mode = 3
 visible = false
-z_index = 1
+z_index = 2
 offset_right = 640.0
 offset_bottom = 960.0
 color = Color(0, 0, 0, 0.466667)
@@ -159,7 +164,7 @@ z_index = 1
 position = Vector2(0, 912)
 texture_normal = SubResource("NoiseTexture2D_p4piy")
 shape = SubResource("RectangleShape2D_6hs3e")
-action = "left"
+action = "Left"
 visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="."]
@@ -167,7 +172,7 @@ z_index = 1
 position = Vector2(200, 912)
 texture_normal = SubResource("NoiseTexture2D_ra54m")
 shape = SubResource("RectangleShape2D_j46g1")
-action = "right"
+action = "Right"
 visibility_mode = 1
 
 [node name="Down" type="TouchScreenButton" parent="."]
@@ -175,7 +180,7 @@ z_index = 1
 position = Vector2(100, 912)
 texture_normal = SubResource("NoiseTexture2D_87d1j")
 shape = SubResource("RectangleShape2D_8prum")
-action = "down"
+action = "Down"
 visibility_mode = 1
 
 [node name="Shoot" type="TouchScreenButton" parent="."]
@@ -184,7 +189,7 @@ position = Vector2(301, 861)
 scale = Vector2(1.07962, 1.03125)
 texture_normal = SubResource("NoiseTexture2D_521ti")
 shape = SubResource("RectangleShape2D_773sf")
-action = "shoot"
+action = "Shoot"
 visibility_mode = 1
 
 [node name="Up" type="TouchScreenButton" parent="."]
@@ -192,7 +197,7 @@ z_index = 1
 position = Vector2(100, 860)
 texture_normal = SubResource("NoiseTexture2D_v4re1")
 shape = SubResource("RectangleShape2D_wx5gr")
-action = "up"
+action = "Up"
 visibility_mode = 1
 
 [connection signal="pressed" from="Pause_menu/Resume" to="." method="toggle_pause"]
