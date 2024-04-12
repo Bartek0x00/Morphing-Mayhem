@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmpaneaw1sbby"]
+[gd_scene load_steps=11 format=3 uid="uid://dmpaneaw1sbby"]
 
+[ext_resource type="Script" path="res://Scripts/Enemy_wrap.gd" id="1_cbcsb"]
 [ext_resource type="Texture2D" uid="uid://mtie427xcktd" path="res://Enemy/Enemy2/Enemy2-1.png" id="1_j1v8u"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_l81uj"]
 [ext_resource type="Texture2D" uid="uid://krgnttuvqq8o" path="res://Enemy/Enemy2/Enemy2-2.png" id="2_0l67d"]
@@ -38,6 +39,8 @@ bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 bg_color = Color(0.270588, 0.670588, 0.270588, 1)
 
 [node name="Enemy2" type="Node2D"]
+script = ExtResource("1_cbcsb")
+metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-53, 55)
@@ -47,7 +50,7 @@ metadata/_edit_group_ = true
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 rotates = false
 
-[node name="Enemy2" type="Area2D" parent="Path2D/PathFollow2D"]
+[node name="Enemy" type="Area2D" parent="Path2D/PathFollow2D"]
 script = ExtResource("1_l81uj")
 speed = 75
 stage = 2
@@ -55,19 +58,19 @@ max_health = 4
 score = 4
 metadata/_edit_group_ = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy2"]
+[node name="Sprite" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy"]
 position = Vector2(-0.5, 0)
 sprite_frames = SubResource("SpriteFrames_rqt3u")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy"]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_mxurp")
 
-[node name="Marker" type="Marker2D" parent="Path2D/PathFollow2D/Enemy2"]
+[node name="Marker" type="Marker2D" parent="Path2D/PathFollow2D/Enemy"]
 position = Vector2(0, 40)
 
-[node name="Health_bar" type="ProgressBar" parent="Path2D/PathFollow2D/Enemy2"]
+[node name="Health_bar" type="ProgressBar" parent="Path2D/PathFollow2D/Enemy"]
 offset_left = -31.0
 offset_top = -39.0
 offset_right = 31.0

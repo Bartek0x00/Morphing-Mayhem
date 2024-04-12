@@ -8,6 +8,10 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b6fov"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
+
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p4piy"]
 width = 96
 height = 48
@@ -43,18 +47,11 @@ height = 48
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx5gr"]
 size = Vector2(96, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5107i"]
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_tanya")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_anm8u")]
 position = Vector2(320, 734)
-speed = 150
-level = 1
-max_health = 3
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(320, 480)
@@ -76,42 +73,6 @@ position = Vector2(320, 0)
 rotation = 3.14159
 scale = Vector2(4, 1)
 shape = SubResource("WorldBoundaryShape2D_b6fov")
-
-[node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(0, 912)
-texture_normal = SubResource("NoiseTexture2D_p4piy")
-shape = SubResource("RectangleShape2D_6hs3e")
-action = "left"
-visibility_mode = 1
-
-[node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(200, 912)
-texture_normal = SubResource("NoiseTexture2D_ra54m")
-shape = SubResource("RectangleShape2D_j46g1")
-action = "right"
-visibility_mode = 1
-
-[node name="Down" type="TouchScreenButton" parent="."]
-position = Vector2(100, 912)
-texture_normal = SubResource("NoiseTexture2D_87d1j")
-shape = SubResource("RectangleShape2D_8prum")
-action = "down"
-visibility_mode = 1
-
-[node name="Shoot" type="TouchScreenButton" parent="."]
-position = Vector2(301, 864)
-scale = Vector2(1.07962, 1)
-texture_normal = SubResource("NoiseTexture2D_521ti")
-shape = SubResource("RectangleShape2D_773sf")
-action = "shoot"
-visibility_mode = 1
-
-[node name="Up" type="TouchScreenButton" parent="."]
-position = Vector2(100, 860)
-texture_normal = SubResource("NoiseTexture2D_v4re1")
-shape = SubResource("RectangleShape2D_wx5gr")
-action = "up"
-visibility_mode = 1
 
 [node name="Limit" type="StaticBody2D" parent="."]
 collision_layer = 32
@@ -184,9 +145,12 @@ position = Vector2(156, 306)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_hy2mw")]
 position = Vector2(456, 321)
+progress = 0.75
 
 [node name="Enemy3" parent="." instance=ExtResource("3_hy2mw")]
 position = Vector2(323, 150)
+clockwise_direction = -1
+progress = 0.25
 
 [node name="Score_bar" type="Label" parent="."]
 offset_left = 446.0
@@ -195,6 +159,42 @@ offset_right = 620.0
 offset_bottom = 118.0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(0, 912)
+texture_normal = SubResource("NoiseTexture2D_p4piy")
+shape = SubResource("RectangleShape2D_6hs3e")
+action = "left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(200, 912)
+texture_normal = SubResource("NoiseTexture2D_ra54m")
+shape = SubResource("RectangleShape2D_j46g1")
+action = "right"
+visibility_mode = 1
+
+[node name="Down" type="TouchScreenButton" parent="."]
+position = Vector2(100, 912)
+texture_normal = SubResource("NoiseTexture2D_87d1j")
+shape = SubResource("RectangleShape2D_8prum")
+action = "down"
+visibility_mode = 1
+
+[node name="Shoot" type="TouchScreenButton" parent="."]
+position = Vector2(301, 864)
+scale = Vector2(1.07962, 1)
+texture_normal = SubResource("NoiseTexture2D_521ti")
+shape = SubResource("RectangleShape2D_773sf")
+action = "shoot"
+visibility_mode = 1
+
+[node name="Up" type="TouchScreenButton" parent="."]
+position = Vector2(100, 860)
+texture_normal = SubResource("NoiseTexture2D_v4re1")
+shape = SubResource("RectangleShape2D_wx5gr")
+action = "up"
+visibility_mode = 1
 
 [connection signal="pressed" from="Pause_menu/Resume" to="." method="toggle_pause"]
 [connection signal="pressed" from="Pause_menu/Exit" to="." method="_on_exit_pressed"]

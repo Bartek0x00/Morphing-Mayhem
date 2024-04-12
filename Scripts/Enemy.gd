@@ -1,5 +1,6 @@
 extends Area2D
 
+var direction: int = 1
 @export var speed: int = 50
 @export var stage: int = 1
 @export var cooldown: int = 4
@@ -24,7 +25,7 @@ func _process(_delta):
 		lastTime = currentTime
 
 func _physics_process(delta):
-	get_parent().progress += speed * delta
+	get_parent().progress += direction * speed * delta
 
 func damage() -> void:
 	if (health - 1) > 0:
