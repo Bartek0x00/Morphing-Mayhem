@@ -49,7 +49,9 @@ curve = SubResource("Curve2D_ruckm")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 rotates = false
 
-[node name="Enemy" type="Area2D" parent="Path2D/PathFollow2D"]
+[node name="Enemy" type="Area2D" parent="Path2D/PathFollow2D" groups=["Enemy"]]
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_xo6ak")
 speed = 100
 stage = 3

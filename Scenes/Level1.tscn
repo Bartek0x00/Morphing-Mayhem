@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://6mhtbgd85gui"]
+
+[ext_resource type="PackedScene" uid="uid://3taynxbx2ow4" path="res://Scenes/Enemy1.tscn" id="1_1l807"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Enemy11" parent="." instance=ExtResource("1_1l807")]
+position = Vector2(138, 121)
+max_stage = 1
+
+[node name="Enemy12" parent="." instance=ExtResource("1_1l807")]
+position = Vector2(242, 270)
+clockwise_direction = -1
+max_stage = 1
+
+[node name="Enemy13" parent="." instance=ExtResource("1_1l807")]
+position = Vector2(514, 150)
+max_stage = 1
+
+[node name="Enemy14" parent="." instance=ExtResource("1_1l807")]
+position = Vector2(494, 366)
+clockwise_direction = -1
+max_stage = 1

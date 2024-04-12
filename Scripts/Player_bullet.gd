@@ -15,4 +15,5 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _on_area_entered(area: Node2D) -> void:
 	queue_free()
-	area.call_deferred("damage")
+	if area.is_in_group("Enemy"):
+		area.call_deferred("damage")

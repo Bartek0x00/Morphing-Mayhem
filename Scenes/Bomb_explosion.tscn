@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwxabr6i47t2"]
+
+[ext_resource type="Texture2D" uid="uid://cmbv56yq02k4" path="res://Enemy/Bomb/WYBUCH_1.png" id="1_ig6kw"]
+[ext_resource type="Texture2D" uid="uid://b7bm7oierjipr" path="res://Enemy/Bomb/WYBUCH_2.png" id="2_gtnh2"]
+[ext_resource type="Texture2D" uid="uid://vvy5nm1olpvt" path="res://Enemy/Bomb/WYBUCH_3.png" id="3_e5i5w"]
+[ext_resource type="Texture2D" uid="uid://cvf8jsvt6f112" path="res://Enemy/Bomb/WYBUCH4.png" id="4_qadrr"]
+[ext_resource type="Script" path="res://Scripts/Bomb_explosion.gd" id="5_ajk2m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6srp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ig6kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gtnh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e5i5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qadrr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Bomb_explosion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_j6srp")
+autoplay = "default"
+script = ExtResource("5_ajk2m")

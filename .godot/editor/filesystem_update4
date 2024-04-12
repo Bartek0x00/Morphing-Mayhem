@@ -1,5 +1,5 @@
+res://Scenes/Settings.tscn
+res://Scripts/Input_map.gd
 res://Scenes/Main.tscn
-res://Scenes/Player.tscn
 res://Scripts/Player.gd
-res://README.md
-res://Scripts/Score.gd
+res://Scripts/Main.gd

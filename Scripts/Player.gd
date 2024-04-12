@@ -9,7 +9,7 @@ const MAX_LEVEL: int = 3
 var lastTime: float = 0
 
 func _ready():
-	Score.level_changed.connect(_on_level_changed)
+	Score.stage_changed.connect(_on_stage_changed)
 
 func damage() -> int:
 	if (health - 1) > 0:
@@ -44,27 +44,26 @@ func double_shoot() -> void:
 		lastTime = currentTime
 
 func _physics_process(_delta):
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("Shoot"):
 		if Score.level != 3:
 			shoot()
 		else:
 			double_shoot()
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("Left"):
 		velocity.x = -speed
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("Right"):
 		velocity.x = speed
 	else:
 		velocity.x = 0
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("Up"):
 		velocity.y = -speed
-	elif Input.is_action_pressed("down"):
+	elif Input.is_action_pressed("Down"):
 		velocity.y = speed
 	else:
 		velocity.y = 0
 	velocity.clamp(Vector2(-speed, -speed), Vector2(speed, speed))
 	move_and_slide()
 
-func _on_level_changed() -> void:
+func _on_stage_changed() -> void:
 	$Sprite.stop()
 	$Sprite.play("Idle" + str(Score.level))
-

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds0461q6xfvij"
-path="res://.godot/imported/Bomb.png-4c66ff947151b2ac05625e17bd3880fb.ctex"
+uid="uid://cmbv56yq02k4"
+path="res://.godot/imported/WYBUCH_1.png-121ad5a7c6032df414374346652adf7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Bomb.png"
-dest_files=["res://.godot/imported/Bomb.png-4c66ff947151b2ac05625e17bd3880fb.ctex"]
+source_file="res://Enemy/Bomb/WYBUCH_1.png"
+dest_files=["res://.godot/imported/WYBUCH_1.png-121ad5a7c6032df414374346652adf7c.ctex"]
 
 [params]
 

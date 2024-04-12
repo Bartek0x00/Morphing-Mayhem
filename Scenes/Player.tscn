@@ -61,9 +61,11 @@ size = Vector2(23.6667, 24.1667)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 33
+collision_mask = 49
 motion_mode = 1
 script = ExtResource("1_o2kcf")
+bullet_speed = Array[int]([600, 800, 800])
+cooldown = Array[float]([1.0, 0.5, 0.5])
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

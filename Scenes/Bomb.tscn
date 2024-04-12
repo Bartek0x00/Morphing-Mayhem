@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://tj26n4ya4vbi"]
 
 [ext_resource type="Script" path="res://Scripts/Bomb.gd" id="1_mghnb"]
-[ext_resource type="Texture2D" uid="uid://ds0461q6xfvij" path="res://Enemy/Bomb.png" id="2_mbbk7"]
+[ext_resource type="Texture2D" uid="uid://buu6xaal2l05x" path="res://Enemy/Bomb/Bomb.png" id="2_ycxn1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5yvo"]
 size = Vector2(16, 32)
 
-[node name="Bomb" type="Area2D"]
-collision_layer = 4
-collision_mask = 3
+[node name="Bomb" type="Area2D" groups=["Enemy_bullet"]]
+collision_layer = 16
+collision_mask = 7
 script = ExtResource("1_mghnb")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
-texture = ExtResource("2_mbbk7")
+texture = ExtResource("2_ycxn1")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o5yvo")

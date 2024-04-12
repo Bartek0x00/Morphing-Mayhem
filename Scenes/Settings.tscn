@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch7wjl65cxypq"]
+
+[ext_resource type="Script" path="res://Scripts/Input_map.gd" id="1_e7qnc"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.466667)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 120.0
+offset_right = -80.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Input" type="Control" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Input_map" type="VBoxContainer" parent="TabContainer/Input"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7qnc")
+
+[node name="Left" type="HBoxContainer" parent="TabContainer/Input/Input_map"]
+layout_mode = 2
+
+[node name="Assign" type="Button" parent="TabContainer/Input/Input_map/Left"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Assign"
+
+[node name="Left" type="Label" parent="TabContainer/Input/Input_map/Left"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Left: Left"
+
+[node name="Right" type="HBoxContainer" parent="TabContainer/Input/Input_map"]
+layout_mode = 2
+
+[node name="Assign" type="Button" parent="TabContainer/Input/Input_map/Right"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Assign"
+
+[node name="Right" type="Label" parent="TabContainer/Input/Input_map/Right"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Right: Right"
+
+[node name="Up" type="HBoxContainer" parent="TabContainer/Input/Input_map"]
+layout_mode = 2
+
+[node name="Assign" type="Button" parent="TabContainer/Input/Input_map/Up"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Assign"
+
+[node name="Up" type="Label" parent="TabContainer/Input/Input_map/Up"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Up: Up"
+
+[node name="Down" type="HBoxContainer" parent="TabContainer/Input/Input_map"]
+layout_mode = 2
+
+[node name="Assign" type="Button" parent="TabContainer/Input/Input_map/Down"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Assign"
+
+[node name="Down" type="Label" parent="TabContainer/Input/Input_map/Down"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Down: Down"
+
+[node name="Shoot" type="HBoxContainer" parent="TabContainer/Input/Input_map"]
+layout_mode = 2
+
+[node name="Assign" type="Button" parent="TabContainer/Input/Input_map/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Assign"
+
+[node name="Shoot" type="Label" parent="TabContainer/Input/Input_map/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Shoot: Space"
+
+[node name="Pause" type="HBoxContainer" parent="TabContainer/Input/Input_map"]
+layout_mode = 2
+
+[node name="Assign" type="Button" parent="TabContainer/Input/Input_map/Pause"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Assign"
+
+[node name="Pause" type="Label" parent="TabContainer/Input/Input_map/Pause"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Pause: Escape"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 80.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 32
+text = "Exit
+"
