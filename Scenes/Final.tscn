@@ -42,6 +42,7 @@ offset_left = 123.0
 offset_top = 677.0
 offset_right = 236.0
 offset_bottom = 730.0
+focus_neighbor_right = NodePath("../Exit")
 theme_override_font_sizes/font_size = 32
 text = "Github
 "
@@ -52,6 +53,7 @@ offset_left = 406.0
 offset_top = 681.0
 offset_right = 472.0
 offset_bottom = 734.0
+focus_neighbor_left = NodePath("../Github")
 theme_override_font_sizes/font_size = 32
 text = "Exit"
 

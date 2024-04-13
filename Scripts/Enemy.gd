@@ -34,6 +34,6 @@ func damage() -> void:
 	if stage < max_stage:
 		var succesor = load("res://Scenes/Enemy" + str(stage + 1) + ".tscn").instantiate()
 		succesor.global_position = global_position
+		succesor.max_stage = max_stage
 		get_window().get_node("Main").add_child(succesor)
 	get_parent().get_parent().get_parent().queue_free()
-	Score.add_score(score)

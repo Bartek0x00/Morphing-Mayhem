@@ -64,8 +64,8 @@ collision_layer = 2
 collision_mask = 49
 motion_mode = 1
 script = ExtResource("1_o2kcf")
-bullet_speed = Array[int]([600, 800, 800])
-cooldown = Array[float]([1.0, 0.5, 0.5])
+bullet_speed = Array[int]([600, 700, 600])
+cooldown = Array[float]([1.0, 0.75, 1.0])
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -73,7 +73,6 @@ position = Vector2(-1, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wb1vo")
 animation = &"Idle1"
-autoplay = "Idle1"
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2(-0.999999, 0.499999)

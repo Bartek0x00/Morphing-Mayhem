@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv2a1d65c7m2l"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_xup5h"]
+[ext_resource type="PackedScene" uid="uid://3taynxbx2ow4" path="res://Scenes/Enemy1.tscn" id="2_v7k4u"]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_xup5h")
+
+[node name="Enemy11" parent="." instance=ExtResource("2_v7k4u")]
+position = Vector2(141, 121)
+
+[node name="Enemy12" parent="." instance=ExtResource("2_v7k4u")]
+position = Vector2(468, 125)
+clockwise_direction = -1
+
+[node name="Enemy13" parent="." instance=ExtResource("2_v7k4u")]
+position = Vector2(466, 347)
+
+[node name="Enemy14" parent="." instance=ExtResource("2_v7k4u")]
+position = Vector2(175, 333)
+clockwise_direction = -1
