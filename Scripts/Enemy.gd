@@ -1,13 +1,13 @@
 extends Area2D
 
-var direction: int = 1
 @export var speed: int = 50
 @export var stage: int = 1
 @export var cooldown: int = 4
 @export var max_health: int = 3
-@export var score: int = 3
 @export var max_stage: int = 3
+@export var bullet_scale: Vector2 = Vector2(1, 1)
 
+var direction: int = 1
 var health: int
 var lastTime: float = 0
 
@@ -21,7 +21,8 @@ func _process(_delta):
 	if currentTime - lastTime >= cooldown:
 		var bullet = preload("res://Scenes/Bomb.tscn").instantiate()
 		bullet.position = $Marker.global_position
-		get_window().add_child(bullet)
+		bullet.scale = bullet_scale
+		get_window().get_node("Main").add_child(bullet)
 		lastTime = currentTime
 
 func _physics_process(delta):

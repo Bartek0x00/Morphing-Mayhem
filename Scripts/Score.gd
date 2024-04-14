@@ -2,8 +2,8 @@ extends Node
 
 signal stage_changed
 
-const MAX_LEVEL: int = 5
-var level: int = 1
+const MAX_LEVEL: int = 6
+var level: int = 2
 var stage: int = 0
 
 func reset():

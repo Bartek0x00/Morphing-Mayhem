@@ -100,59 +100,15 @@ position = Vector2(320, 846)
 scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_50udm")
 
-[node name="Pause_menu" type="ColorRect" parent="."]
-process_mode = 3
-visible = false
-z_index = 2
-offset_right = 640.0
-offset_bottom = 960.0
-color = Color(0, 0, 0, 0.733333)
-
-[node name="Resume" type="Button" parent="Pause_menu"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = -66.0
-offset_right = 97.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_bottom = NodePath("../Exit")
-theme_override_font_sizes/font_size = 48
-action_mode = 0
-text = "Resume"
-
-[node name="Exit" type="Button" parent="Pause_menu"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = 51.0
-offset_right = 48.0
-offset_bottom = 126.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_top = NodePath("../Resume")
-theme_override_font_sizes/font_size = 48
-action_mode = 0
-text = "Exit"
-
 [node name="Pause" type="Button" parent="."]
+z_index = 1
 offset_right = 89.0
 offset_bottom = 96.0
 theme_override_font_sizes/font_size = 64
 text = "="
 
 [node name="Score_bar" type="Label" parent="."]
+z_index = 1
 offset_left = 446.0
 offset_top = 14.0
 offset_right = 620.0
@@ -162,7 +118,8 @@ vertical_alignment = 1
 
 [node name="Left" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(0, 912)
+position = Vector2(0, 860)
+scale = Vector2(1, 2.08333)
 texture_normal = SubResource("NoiseTexture2D_p4piy")
 shape = SubResource("RectangleShape2D_6hs3e")
 action = "Left"
@@ -170,7 +127,8 @@ visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(200, 912)
+position = Vector2(200, 860)
+scale = Vector2(1, 2.08333)
 texture_normal = SubResource("NoiseTexture2D_ra54m")
 shape = SubResource("RectangleShape2D_j46g1")
 action = "Right"
@@ -211,6 +169,4 @@ scale = Vector2(0.625, 1)
 texture = ExtResource("3_ldqjw")
 centered = false
 
-[connection signal="pressed" from="Pause_menu/Resume" to="." method="toggle_pause"]
-[connection signal="pressed" from="Pause_menu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Pause" to="." method="toggle_pause"]
