@@ -3,6 +3,8 @@ extends Control
 @onready var tree = get_tree()
 
 func _ready():
+	if OS.get_name() == "Android":
+		ProjectSettings.set_setting("display/window/stretch/aspect", "ignore")
 	$Play.pressed.connect(_on_play_pressed)
 	$Settings.pressed.connect(_on_settings_pressed)
 	$Exit.pressed.connect(_on_exit_pressed)

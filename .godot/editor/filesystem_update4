@@ -1,5 +1,6 @@
-res://Scenes/Main.tscn
-res://Scripts/Level.gd
-res://Scripts/Enemy.gd
-res://Scenes/Enemy4.tscn
+res://Scenes/Start_menu.tscn
+res://Scripts/Start_menu.gd
+res://Scenes/Player_bullet.tscn
 res://Scripts/Score.gd
+res://Scripts/Player.gd
+res://Scripts/Player_bullet.gd

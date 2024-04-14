@@ -3,7 +3,7 @@ extends Node
 signal stage_changed
 
 const MAX_LEVEL: int = 6
-var level: int = 2
+var level: int = 3
 var stage: int = 0
 
 func reset():

@@ -3,7 +3,6 @@ extends Area2D
 @export var speed: int = 600
 
 func _ready():
-	$Sprite.frame = Score.level - 1
 	body_entered.connect(_on_body_entered)
 	area_entered.connect(_on_area_entered)
 
