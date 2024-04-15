@@ -14,14 +14,13 @@ func _process(_delta):
 	$Background/Layer.motion_offset.y += scroll_speed
 
 func toggle_pause():
-	var pause_menu = preload("res://Scenes/Pause_menu.tscn").instantiate()
 	if get_tree().paused == true:
 		get_tree().paused = false
-		remove_child(pause_menu)
+		$Pause_menu.queue_free()
 		$Pause.show()
 	else:
 		get_tree().paused = true
-		add_child(pause_menu)
+		add_child(preload("res://Scenes/Pause_menu.tscn").instantiate())
 		$Pause.hide()
 
 func _on_exit_pressed():

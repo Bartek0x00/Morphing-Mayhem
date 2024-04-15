@@ -64,6 +64,7 @@ collision_layer = 2
 collision_mask = 49
 motion_mode = 1
 script = ExtResource("1_o2kcf")
+speed = 250
 bullet_speed = Array[int]([600, 700, 600])
 cooldown = Array[float]([1.0, 0.75, 1.0])
 metadata/_edit_group_ = true

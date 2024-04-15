@@ -4,21 +4,28 @@ extends CharacterBody2D
 @export var bullet_speed: Array[int] = [600, 800, 1000]
 @export var cooldown: Array[float] = [1, 0.5, 0.25]
 @export var max_health: Array[int] = [3, 4, 5]
+@export var invincibilty: float = 4
 var health: int = max_health[Score.stage]
 const MAX_LEVEL: int = 3
 var lastTime: float = 0
+var isInvincible: bool = false
 
 func _ready():
 	Score.stage_changed.connect(_on_stage_changed)
 	_on_stage_changed()
 
-func damage() -> int:
+func damage() -> void:
 	if (health - 1) > 0:
-		health -= 1
-		return 0
-	get_tree().change_scene_to_file("res://Scenes/Defeat.tscn")
-	return 1
+		if not isInvincible:
+			health -= 1
+			isInvincible = true
+			var timer = get_tree().create_timer(invincibilty)
+			timer.timeout.connect(_on_invincible_timeout)
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Defeat.tscn")
 
+func _on_invincible_timeout() -> void:
+	isInvincible = false;
 func shoot() -> void:
 	var currentTime = Time.get_ticks_msec() / 1000.0
 	if currentTime - lastTime >= cooldown[Score.stage]:

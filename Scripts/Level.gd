@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	toggle_pause()
 	var color_rect = ColorRect.new()
 	color_rect.color = Color(0, 0, 0, 0.73)
 	color_rect.size = Vector2(640, 128)
@@ -19,15 +20,16 @@ func _ready():
 	var tween = get_tree().create_tween()
 	tween.tween_property(color_rect, "modulate", Color(0, 0, 0, 0), 3)
 	tween.tween_callback(color_rect.queue_free)
+	tween.tween_callback(toggle_pause)
 
+func toggle_pause() -> void:
+	if process_mode == PROCESS_MODE_DISABLED:
+		process_mode = PROCESS_MODE_ALWAYS
+	else:
+		process_mode = PROCESS_MODE_DISABLED
 func _process(_delta):
 	if get_children().size() == 0:
-		var level_timer = Timer.new()
-		add_child(level_timer)
-		level_timer.start(1)
-		level_timer.timeout.connect(_on_level_timeout)
+		Score.add_level()
+		queue_free()
+		get_parent().switch_level()
 
-func _on_level_timeout() -> void:
-	Score.add_level()
-	queue_free()
-	get_parent().switch_level()
