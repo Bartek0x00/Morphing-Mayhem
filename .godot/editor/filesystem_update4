@@ -1,3 +1,2 @@
-res://Scripts/Level.gd
-res://Scripts/Player.gd
-res://Scenes/Bomb.tscn
+res://Scenes/Start_menu.tscn
+res://Scripts/Main.gd

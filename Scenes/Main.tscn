@@ -1,8 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbe1jjydkwcnr"]
+[gd_scene load_steps=20 format=3 uid="uid://dbe1jjydkwcnr"]
 
 [ext_resource type="PackedScene" uid="uid://boivmjacg4rp" path="res://Scenes/Player.tscn" id="1_anm8u"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_tanya"]
+[ext_resource type="Texture2D" uid="uid://bl0yfbdru66u6" path="res://Textures/left_button.png" id="3_20grm"]
 [ext_resource type="Texture2D" uid="uid://c0svkallyqc04" path="res://Backgrounds/Background1.png" id="3_ldqjw"]
+[ext_resource type="Texture2D" uid="uid://fy7xjhx0cd6q" path="res://Textures/right_button.png" id="4_81vny"]
+[ext_resource type="Texture2D" uid="uid://b8i8b0v5l0jnm" path="res://Textures/down_button.png" id="5_6ajoi"]
+[ext_resource type="Texture2D" uid="uid://ijv6bt5jnr27" path="res://Textures/space_button.png" id="6_pwu2m"]
+[ext_resource type="Texture2D" uid="uid://v3oarqikm3fx" path="res://Textures/up_button.png" id="7_rrvko"]
+[ext_resource type="AudioStream" uid="uid://bwnkd5qtslk4y" path="res://Sounds/Idle.mp3" id="9_q0ga8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rcp0f"]
 
@@ -14,37 +20,17 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbsv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p4piy"]
-width = 96
-height = 48
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hs3e"]
-size = Vector2(96, 48)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ra54m"]
-width = 96
-height = 48
+size = Vector2(96, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j46g1"]
-size = Vector2(96, 48)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_87d1j"]
-width = 96
-height = 48
+size = Vector2(96, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8prum"]
 size = Vector2(96, 48)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_521ti"]
-width = 314
-height = 96
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_773sf"]
-size = Vector2(314, 96)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v4re1"]
-width = 96
-height = 48
+size = Vector2(336, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx5gr"]
 size = Vector2(96, 48)
@@ -120,8 +106,7 @@ vertical_alignment = 1
 [node name="Left" type="TouchScreenButton" parent="."]
 z_index = 1
 position = Vector2(0, 860)
-scale = Vector2(1, 2.08333)
-texture_normal = SubResource("NoiseTexture2D_p4piy")
+texture_normal = ExtResource("3_20grm")
 shape = SubResource("RectangleShape2D_6hs3e")
 action = "Left"
 visibility_mode = 1
@@ -129,8 +114,7 @@ visibility_mode = 1
 [node name="Right" type="TouchScreenButton" parent="."]
 z_index = 1
 position = Vector2(200, 860)
-scale = Vector2(1, 2.08333)
-texture_normal = SubResource("NoiseTexture2D_ra54m")
+texture_normal = ExtResource("4_81vny")
 shape = SubResource("RectangleShape2D_j46g1")
 action = "Right"
 visibility_mode = 1
@@ -138,16 +122,15 @@ visibility_mode = 1
 [node name="Down" type="TouchScreenButton" parent="."]
 z_index = 1
 position = Vector2(100, 912)
-texture_normal = SubResource("NoiseTexture2D_87d1j")
+texture_normal = ExtResource("5_6ajoi")
 shape = SubResource("RectangleShape2D_8prum")
 action = "Down"
 visibility_mode = 1
 
 [node name="Shoot" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(301, 861)
-scale = Vector2(1.07962, 1.03125)
-texture_normal = SubResource("NoiseTexture2D_521ti")
+position = Vector2(301, 860)
+texture_normal = ExtResource("6_pwu2m")
 shape = SubResource("RectangleShape2D_773sf")
 action = "Shoot"
 visibility_mode = 1
@@ -155,7 +138,7 @@ visibility_mode = 1
 [node name="Up" type="TouchScreenButton" parent="."]
 z_index = 1
 position = Vector2(100, 860)
-texture_normal = SubResource("NoiseTexture2D_v4re1")
+texture_normal = ExtResource("7_rrvko")
 shape = SubResource("RectangleShape2D_wx5gr")
 action = "Up"
 visibility_mode = 1
@@ -169,5 +152,11 @@ motion_mirroring = Vector2(0, 1024)
 scale = Vector2(0.625, 1)
 texture = ExtResource("3_ldqjw")
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("9_q0ga8")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="Pause" to="." method="toggle_pause"]

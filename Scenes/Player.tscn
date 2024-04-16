@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boivmjacg4rp"]
+[gd_scene load_steps=14 format=3 uid="uid://boivmjacg4rp"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_o2kcf"]
 [ext_resource type="Texture2D" uid="uid://dis2un6mxn2pi" path="res://Player/GRACZ-KLATKA-1.png" id="2_ghhse"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7cer261ppfqo" path="res://Player/GRACZ-3-KLATKA-1.png" id="8_hcclg"]
 [ext_resource type="Texture2D" uid="uid://dpmceik6f65to" path="res://Player/GRACZ-3-KLATKA-2.png" id="9_8csax"]
 [ext_resource type="Texture2D" uid="uid://ddq8elsuryr8p" path="res://Player/GRACZ-3-KLATKA-3.png" id="10_dqgq6"]
+[ext_resource type="AudioStream" uid="uid://d0g6vy1v8acky" path="res://Sounds/Damage.mp3" id="11_v7c4v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wb1vo"]
 animations = [{
@@ -88,3 +89,7 @@ position = Vector2(-32, -96)
 
 [node name="Right_marker" type="Marker2D" parent="."]
 position = Vector2(32, -96)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_v7c4v")
+volume_db = -20.0

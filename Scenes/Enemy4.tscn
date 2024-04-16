@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ft8occeki6yv" path="res://Enemy/Enemy4/BOSS-3.png" id="4_ymx7s"]
 [ext_resource type="Texture2D" uid="uid://b23bnukr7guei" path="res://Enemy/Enemy4/BOSS-2.png" id="5_rwr4o"]
 
-[sub_resource type="Curve2D" id="Curve2D_8o6o7"]
+[sub_resource type="Curve2D" id="Curve2D_e5a83"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 213, 13, 0, 0, 0, 0, 170, -102, 0, 0, 0, 0, 51, -47, 0, 0, 0, 0, 68, -155, 0, 0, 0, 0, 68, 85, 0, 0, 0, 0, -66, -5, 0, 0, 0, 0, -46, -118, 0, 0, 0, 0, 155, 35, 0, 0, 0, 0, -4, 4, 0, 0, 0, 0, 213, 13)
+"points": PackedVector2Array(0, 0, 0, 0, 204, 2, 0, 0, 0, 0, 258, 68, 0, 0, 0, 0, 201, 189, 0, 0, 0, 0, -153, -21, 0, 0, 0, 0, 186, -116, 0, 0, 0, 0, -82, -107, 0, 0, 0, 0, -154, 35, 0, 0, 0, 0, -5, 172, 0, 0, 0, 0, 2, -171, 0, 0, 0, 0, 204, 1)
 }
 point_count = 10
 
@@ -42,20 +42,19 @@ script = ExtResource("1_elh5g")
 metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_8o6o7")
+curve = SubResource("Curve2D_e5a83")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(213, 13)
+position = Vector2(204, 2)
 rotates = false
 
 [node name="Enemy" type="Area2D" parent="Path2D/PathFollow2D" groups=["Enemy"]]
 script = ExtResource("2_gcqqh")
-speed = 100
+speed = 300
 stage = 4
-cooldown = 2
-max_health = 6
+cooldown = 1.5
+max_health = 12
 max_stage = 4
-bullet_scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Enemy"]
@@ -66,7 +65,7 @@ autoplay = "default"
 scale = Vector2(6, 5)
 shape = SubResource("RectangleShape2D_bwwm4")
 
-[node name="Marker2D" type="Marker2D" parent="Path2D/PathFollow2D/Enemy"]
+[node name="Marker" type="Marker2D" parent="Path2D/PathFollow2D/Enemy"]
 position = Vector2(0, 96)
 
 [node name="Health_bar" type="ProgressBar" parent="Path2D/PathFollow2D/Enemy"]

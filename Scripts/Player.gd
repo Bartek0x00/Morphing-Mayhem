@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var bullet_speed: Array[int] = [600, 800, 1000]
 @export var cooldown: Array[float] = [1, 0.5, 0.25]
 @export var max_health: Array[int] = [3, 4, 5]
-@export var invincibilty: float = 4
+@export var invincibilty: float = 1.0
 var health: int = max_health[Score.stage]
 const MAX_LEVEL: int = 3
 var lastTime: float = 0
@@ -15,17 +15,30 @@ func _ready():
 	_on_stage_changed()
 
 func damage() -> void:
-	if (health - 1) > 0:
-		if not isInvincible:
+	if not isInvincible:
+		if (health - 1) > 0:
 			health -= 1
 			isInvincible = true
 			var timer = get_tree().create_timer(invincibilty)
 			timer.timeout.connect(_on_invincible_timeout)
-	else:
-		get_tree().change_scene_to_file("res://Scenes/Defeat.tscn")
+			modulate_opacity(invincibilty)
+			$AudioStreamPlayer.play()
+			Input.vibrate_handheld(500)
+		else:
+			get_tree().change_scene_to_file("res://Scenes/Defeat.tscn")
+
+func modulate_opacity(time: float) -> void:
+	var tween = get_tree().create_tween()
+	for i in range(time * 2):
+		tween.tween_property($Sprite, "modulate:a", 0, (time / 4))
+		tween.play()
+		
+		tween.tween_property($Sprite, "modulate:a", 1, (time / 4))
+		tween.play()
 
 func _on_invincible_timeout() -> void:
 	isInvincible = false;
+
 func shoot() -> void:
 	var currentTime = Time.get_ticks_msec() / 1000.0
 	if currentTime - lastTime >= cooldown[Score.stage]:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://kh2hrgeu47e7"]
+[gd_scene load_steps=3 format=3 uid="uid://kh2hrgeu47e7"]
 
 [ext_resource type="Script" path="res://Scripts/Defeat.gd" id="1_k0d1j"]
+[ext_resource type="AudioStream" uid="uid://sy6fvc05kpnv" path="res://Sounds/Defeat.mp3" id="2_duhmf"]
 
 [node name="Defeat" type="Control"]
 layout_mode = 3
@@ -71,6 +72,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_duhmf")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="Try_again" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

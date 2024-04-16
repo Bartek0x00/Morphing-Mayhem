@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb328p1jlqkpy"]
+
+[ext_resource type="Script" path="res://Scripts/Bomb.gd" id="1_v8q3i"]
+[ext_resource type="Texture2D" uid="uid://buu6xaal2l05x" path="res://Enemy/Bomb/Bomb.png" id="2_41hqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt4bc"]
+size = Vector2(26.8, 25.75)
+
+[node name="Mega_bomb" type="Area2D"]
+collision_layer = 16
+collision_mask = 7
+script = ExtResource("1_v8q3i")
+speed = 400
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1.5, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("2_41hqq")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.500001, 11.5)
+scale = Vector2(2.5, 4)
+shape = SubResource("RectangleShape2D_bt4bc")

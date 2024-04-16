@@ -7,7 +7,7 @@
 script = ExtResource("1_03aut")
 
 [node name="Enemy11" parent="." instance=ExtResource("2_0wtgm")]
-position = Vector2(150, 118)
+position = Vector2(178, 138)
 max_stage = 2
 
 [node name="Enemy12" parent="." instance=ExtResource("2_0wtgm")]

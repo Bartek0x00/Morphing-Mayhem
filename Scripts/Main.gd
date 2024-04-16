@@ -7,6 +7,10 @@ func _ready():
 		$Limit/Mobile.queue_free()
 		$Boundary/Mobile.queue_free()
 	switch_level()
+	$AudioStreamPlayer.finished.connect(_on_audio_loop_finished)
+
+func _on_audio_loop_finished():
+	$AudioStreamPlayer.play()
 
 func _process(_delta):
 	$Score_bar.text = "Stage: {0}\nLevel: {1}\nHp: {2}/{3}".format([Score.stage + 1,\
@@ -15,10 +19,12 @@ func _process(_delta):
 
 func toggle_pause():
 	if get_tree().paused == true:
+		$AudioStreamPlayer.stream_paused = false
 		get_tree().paused = false
 		$Pause_menu.queue_free()
 		$Pause.show()
 	else:
+		$AudioStreamPlayer.stream_paused = true
 		get_tree().paused = true
 		add_child(preload("res://Scenes/Pause_menu.tscn").instantiate())
 		$Pause.hide()
