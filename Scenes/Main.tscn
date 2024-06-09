@@ -30,7 +30,7 @@ size = Vector2(96, 96)
 size = Vector2(96, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_773sf"]
-size = Vector2(336, 96)
+size = Vector2(335, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx5gr"]
 size = Vector2(96, 48)
@@ -68,7 +68,7 @@ scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_5107i")
 
 [node name="Mobile" type="CollisionShape2D" parent="Boundary"]
-position = Vector2(320, 846)
+position = Vector2(320, 860)
 scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_50udm")
 
@@ -82,7 +82,7 @@ scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_bcbsv")
 
 [node name="Mobile" type="CollisionShape2D" parent="Limit"]
-position = Vector2(320, 846)
+position = Vector2(320, 860)
 scale = Vector2(32, 1)
 shape = SubResource("RectangleShape2D_50udm")
 
@@ -105,7 +105,8 @@ vertical_alignment = 1
 
 [node name="Left" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(0, 860)
+position = Vector2(-1.19209e-07, 850)
+scale = Vector2(1.105, 1.146)
 texture_normal = ExtResource("3_20grm")
 shape = SubResource("RectangleShape2D_6hs3e")
 action = "Left"
@@ -113,7 +114,8 @@ visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(200, 860)
+position = Vector2(212, 850)
+scale = Vector2(1.11458, 1.14583)
 texture_normal = ExtResource("4_81vny")
 shape = SubResource("RectangleShape2D_j46g1")
 action = "Right"
@@ -121,7 +123,8 @@ visibility_mode = 1
 
 [node name="Down" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(100, 912)
+position = Vector2(106, 905)
+scale = Vector2(1.105, 1.14583)
 texture_normal = ExtResource("5_6ajoi")
 shape = SubResource("RectangleShape2D_8prum")
 action = "Down"
@@ -129,7 +132,8 @@ visibility_mode = 1
 
 [node name="Shoot" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(301, 860)
+position = Vector2(318, 850)
+scale = Vector2(0.958333, 1.14583)
 texture_normal = ExtResource("6_pwu2m")
 shape = SubResource("RectangleShape2D_773sf")
 action = "Shoot"
@@ -137,7 +141,8 @@ visibility_mode = 1
 
 [node name="Up" type="TouchScreenButton" parent="."]
 z_index = 1
-position = Vector2(100, 860)
+position = Vector2(106, 850)
+scale = Vector2(1.105, 1.14583)
 texture_normal = ExtResource("7_rrvko")
 shape = SubResource("RectangleShape2D_wx5gr")
 action = "Up"
