@@ -4,7 +4,6 @@ extends Node2D
 
 func _ready():
 	if OS.get_name() != "Android":
-		ProjectSettings.set_setting("display/window/stretch/aspect", 0)
 		$Limit/Mobile.queue_free()
 		$Boundary/Mobile.queue_free()
 	switch_level()
