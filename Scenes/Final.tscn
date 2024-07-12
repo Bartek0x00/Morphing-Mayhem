@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c17gunyefnhfa"]
+[gd_scene load_steps=3 format=3 uid="uid://c17gunyefnhfa"]
 
 [ext_resource type="Script" path="res://Scripts/Final.gd" id="1_talqn"]
+[ext_resource type="Texture2D" uid="uid://bo6s7nvh3465n" path="res://Backgrounds/LOGO-1.png" id="2_3j12u"]
 
 [node name="Final" type="Control"]
 layout_mode = 3
@@ -28,9 +29,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -197.0
-offset_top = -140.0
+offset_top = -86.0
 offset_right = 188.0
-offset_bottom = 107.0
+offset_bottom = 161.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 32
@@ -56,6 +57,11 @@ offset_bottom = 734.0
 focus_neighbor_left = NodePath("../Github")
 theme_override_font_sizes/font_size = 32
 text = "Exit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 201)
+scale = Vector2(1.67188, 1.67188)
+texture = ExtResource("2_3j12u")
 
 [connection signal="pressed" from="ColorRect/Github" to="." method="_on_github_pressed"]
 [connection signal="pressed" from="ColorRect/Exit" to="." method="_on_exit_pressed"]

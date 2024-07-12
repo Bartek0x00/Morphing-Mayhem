@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba6qge2caslr"]
+[gd_scene load_steps=3 format=3 uid="uid://ba6qge2caslr"]
 
 [ext_resource type="Script" path="res://Scripts/Start_menu.gd" id="1_yuac6"]
+[ext_resource type="Texture2D" uid="uid://c7e7cqoaph00d" path="res://Backgrounds/logo-4.png" id="2_w4lpw"]
 
 [node name="Start_menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yuac6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 480)
+texture = ExtResource("2_w4lpw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -28,9 +33,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -36.5
-offset_top = -106.5
+offset_top = -107.5
 offset_right = 36.5
-offset_bottom = -53.5
+offset_bottom = -54.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_bottom = NodePath("../Settings")
@@ -46,9 +51,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -66.5
-offset_top = -26.5
+offset_top = -36.5
 offset_right = 66.5
-offset_bottom = 26.5
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../Play")
@@ -65,9 +70,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -33.0
-offset_top = 53.5
+offset_top = 39.5
 offset_right = 33.0
-offset_bottom = 106.5
+offset_bottom = 92.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../Settings")

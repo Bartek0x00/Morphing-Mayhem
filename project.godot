@@ -17,7 +17,6 @@ run/disable_stderr=true
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Backgrounds/logo-4.png"
 config/icon="res://Backgrounds/LOGO-1.png"
-boot_splash/minimum_display_time=400
 
 [autoload]
 
@@ -29,7 +28,6 @@ Score="*res://Scripts/Score.gd"
 window/size/viewport_width=640
 window/size/viewport_height=960
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
 window/handheld/orientation=1
 window/vsync/vsync_mode=2
 
@@ -83,5 +81,4 @@ Pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
