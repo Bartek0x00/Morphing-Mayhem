@@ -1,6 +1,6 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1720800417
-export_presets.cfg::TextFile::-1::1720798752::0::1::::<><>::
+::res://::1720807110
+export_presets.cfg::TextFile::-1::1720802804::0::1::::<><>::
 README.md::TextFile::-1::1717952766::0::1::::<><>::
 ::res://Backgrounds/::1713213903
 Android.png::CompressedTexture2D::1076483877805556976::1713209189::1713209243::1::::<><>::
@@ -45,7 +45,7 @@ GRACZ-KLATKA-3.png::CompressedTexture2D::1874943860723353753::1713121563::171312
 POCISK-2.png::CompressedTexture2D::7538861497060183629::1713121563::1713121563::1::::<><>::
 POCISK-3.png::CompressedTexture2D::1420708868709294730::1713121563::1713121563::1::::<><>::
 POCISK.png::CompressedTexture2D::8382033985032737340::1713121563::1713121563::1::::<><>::
-::res://Scenes/::1720792292
+::res://Scenes/::1720802784
 Bomb.tscn::PackedScene::1353862876019393830::1713195319::0::1::::<><>::res://Scripts/Bomb.gd<>uid://buu6xaal2l05x::::res://Enemy/Bomb/Bomb.png
 Bomb_explosion.tscn::PackedScene::117001725266367657::1713121563::0::1::::<><>::uid://cmbv56yq02k4::::res://Enemy/Bomb/WYBUCH_1.png<>uid://b7bm7oierjipr::::res://Enemy/Bomb/WYBUCH_2.png<>uid://vvy5nm1olpvt::::res://Enemy/Bomb/WYBUCH_3.png<>uid://cvf8jsvt6f112::::res://Enemy/Bomb/WYBUCH4.png<>res://Scripts/Bomb_explosion.gd
 Defeat.tscn::PackedScene::717991842396195408::1713207408::0::1::::<><>::res://Scripts/Defeat.gd<>uid://sy6fvc05kpnv::::res://Sounds/Defeat.mp3
@@ -61,7 +61,7 @@ Level3.tscn::PackedScene::960577647430521545::1713197638::0::1::::<><>::res://Sc
 Level4.tscn::PackedScene::6409363443927373778::1713121563::0::1::::<><>::res://Scripts/Level.gd<>uid://dvklih5aplnqy::::res://Scenes/Enemy3.tscn
 Level5.tscn::PackedScene::6302591920612018673::1713121563::0::1::::<><>::res://Scripts/Level.gd<>uid://3taynxbx2ow4::::res://Scenes/Enemy1.tscn
 Level6.tscn::PackedScene::7569184550352540325::1713121563::0::1::::<><>::res://Scripts/Level.gd<>uid://cnx4e5dopq1mx::::res://Scenes/Enemy4.tscn
-Main.tscn::PackedScene::7239303629626641155::1720790124::0::1::::<><>::uid://boivmjacg4rp::::res://Scenes/Player.tscn<>res://Scripts/Main.gd<>uid://bl0yfbdru66u6::::res://Textures/left_button.png<>uid://c0svkallyqc04::::res://Backgrounds/Background1.png<>uid://fy7xjhx0cd6q::::res://Textures/right_button.png<>uid://b8i8b0v5l0jnm::::res://Textures/down_button.png<>uid://ijv6bt5jnr27::::res://Textures/space_button.png<>uid://v3oarqikm3fx::::res://Textures/up_button.png<>uid://bwnkd5qtslk4y::::res://Sounds/Idle.mp3
+Main.tscn::PackedScene::7239303629626641155::1720802784::0::1::::<><>::uid://boivmjacg4rp::::res://Scenes/Player.tscn<>res://Scripts/Main.gd<>uid://bl0yfbdru66u6::::res://Textures/left_button.png<>uid://c0svkallyqc04::::res://Backgrounds/Background1.png<>uid://fy7xjhx0cd6q::::res://Textures/right_button.png<>uid://b8i8b0v5l0jnm::::res://Textures/down_button.png<>uid://ijv6bt5jnr27::::res://Textures/space_button.png<>uid://v3oarqikm3fx::::res://Textures/up_button.png<>uid://bwnkd5qtslk4y::::res://Sounds/Idle.mp3
 Mega_bomb.tscn::PackedScene::2516111222887789710::1713200548::0::1::::<><>::res://Scripts/Bomb.gd<>uid://buu6xaal2l05x::::res://Enemy/Bomb/Bomb.png
 Mega_bomb_explosion.tscn::PackedScene::3980664341623095127::1713200340::0::1::::<><>::uid://cmbv56yq02k4::::res://Enemy/Bomb/WYBUCH_1.png<>uid://b7bm7oierjipr::::res://Enemy/Bomb/WYBUCH_2.png<>uid://vvy5nm1olpvt::::res://Enemy/Bomb/WYBUCH_3.png<>uid://cvf8jsvt6f112::::res://Enemy/Bomb/WYBUCH4.png<>res://Scripts/Bomb_explosion.gd
 Pause_menu.tscn::PackedScene::6673119554525544521::1713121563::0::1::::<><>::res://Scripts/Pause_menu.gd
